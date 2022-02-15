@@ -55,10 +55,10 @@ public:
 
     class iterator {
     public:
-        using difference_type = typename Vector::difference_type;
-        using value_type = typename Vector::value_type;
-        using reference = typename Vector::reference;
-        using pointer = typename Vector::pointer;
+        using difference_type = Vector::difference_type;
+        using value_type = Vector::value_type;
+        using reference = Vector::reference;
+        using pointer = Vector::pointer;
         using iterator_category = std::forward_iterator_tag;
 
         iterator(pointer cur): m_cur(cur) {}
