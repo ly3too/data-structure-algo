@@ -7,6 +7,7 @@ template <typename T, typename Alloc = std::allocator<T>>
 class Vector {
 public:
     using value_type = T;
+    using reference = T&;
     using size_type = std::size_t;
     using allocator_type = Alloc;
     using pointer = T*;
@@ -54,6 +55,12 @@ public:
 
     class iterator {
     public:
+        using difference_type = typename Vector::difference_type;
+        using value_type = typename Vector::value_type;
+        using reference = typename Vector::reference;
+        using pointer = typename Vector::pointer;
+        using iterator_category = std::forward_iterator_tag;
+
         iterator(pointer cur): m_cur(cur) {}
 
         iterator &operator++() {
